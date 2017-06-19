@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{947C24CF-F488-4E08-8674-8B79C5E7ACF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherTypingPlugin", "Plugins\WeatherTypingPlugin\WeatherTypingPlugin.csproj", "{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherTypingPluginDenasu", "Plugins\WeatherTypingPluginDenasu\WeatherTypingPluginDenasu.csproj", "{68B2AB90-580C-45F1-A447-552BE753C040}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631}.Debug|Win32.Build.0 = Debug|Any CPU
+		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631}.Debug|x64.Build.0 = Debug|Any CPU
+		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631}.Release|Win32.ActiveCfg = Release|Any CPU
+		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631}.Release|Win32.Build.0 = Release|Any CPU
+		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631}.Release|x64.ActiveCfg = Release|Any CPU
+		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631}.Release|x64.Build.0 = Release|Any CPU
+		{68B2AB90-580C-45F1-A447-552BE753C040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68B2AB90-580C-45F1-A447-552BE753C040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68B2AB90-580C-45F1-A447-552BE753C040}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{68B2AB90-580C-45F1-A447-552BE753C040}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{68B2AB90-580C-45F1-A447-552BE753C040}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{68B2AB90-580C-45F1-A447-552BE753C040}.Debug|Win32.Build.0 = Debug|Any CPU
+		{68B2AB90-580C-45F1-A447-552BE753C040}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{68B2AB90-580C-45F1-A447-552BE753C040}.Debug|x64.Build.0 = Debug|Any CPU
+		{68B2AB90-580C-45F1-A447-552BE753C040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68B2AB90-580C-45F1-A447-552BE753C040}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68B2AB90-580C-45F1-A447-552BE753C040}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{68B2AB90-580C-45F1-A447-552BE753C040}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{68B2AB90-580C-45F1-A447-552BE753C040}.Release|Win32.ActiveCfg = Release|Any CPU
+		{68B2AB90-580C-45F1-A447-552BE753C040}.Release|Win32.Build.0 = Release|Any CPU
+		{68B2AB90-580C-45F1-A447-552BE753C040}.Release|x64.ActiveCfg = Release|Any CPU
+		{68B2AB90-580C-45F1-A447-552BE753C040}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631} = {947C24CF-F488-4E08-8674-8B79C5E7ACF7}
+		{68B2AB90-580C-45F1-A447-552BE753C040} = {947C24CF-F488-4E08-8674-8B79C5E7ACF7}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal
