@@ -1,17 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{68B2AB90-580C-45F1-A447-552BE753C040}</ProjectGuid>
+    <ProjectGuid>{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>com.denasu.WeatherTyping.plugin.input</RootNamespace>
-    <AssemblyName>WeatherTypingPluginDenasu</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>WeatherTypingPluginSample</RootNamespace>
+    <AssemblyName>WeatherTypingPluginSample</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,27 +43,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InputFilterKanaV1.cs" />
-    <Compile Include="InputFilterDefaultV1.cs" />
-    <Compile Include="InputFilterRomanV1.cs" />
-    <Compile Include="KeyCustomDefaultV1.cs" />
-    <Compile Include="KeyCustomNICOLAV1.cs" />
-    <Compile Include="KeyFilterDefaultV1.cs" />
-    <Compile Include="KeyFilterNICOLAV1.cs" />
+    <Compile Include="InputCustomSampleV1.cs" />
+    <Compile Include="InputFilterSampleV1.cs" />
+    <Compile Include="KeyCustomSampleV1.cs" />
+    <Compile Include="KeyFilterSampleV1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="InputCustomDefaultV1.cs" />
-    <Compile Include="InputCustomRomanV1.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

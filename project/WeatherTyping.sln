@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherTypingPlugin", "Plug
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherTypingPluginDenasu", "Plugins\WeatherTypingPluginDenasu\WeatherTypingPluginDenasu.csproj", "{68B2AB90-580C-45F1-A447-552BE753C040}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherTypingPluginSample", "Plugins\WeatherTypingPluginSample\WeatherTypingPluginSample.csproj", "{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,22 @@ Global
 		{68B2AB90-580C-45F1-A447-552BE753C040}.Release|Win32.Build.0 = Release|Any CPU
 		{68B2AB90-580C-45F1-A447-552BE753C040}.Release|x64.ActiveCfg = Release|Any CPU
 		{68B2AB90-580C-45F1-A447-552BE753C040}.Release|x64.Build.0 = Release|Any CPU
+		{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}.Debug|Win32.Build.0 = Debug|Any CPU
+		{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}.Debug|x64.Build.0 = Debug|Any CPU
+		{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}.Release|Win32.ActiveCfg = Release|Any CPU
+		{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}.Release|Win32.Build.0 = Release|Any CPU
+		{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}.Release|x64.ActiveCfg = Release|Any CPU
+		{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +78,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DA9AB2A5-C729-4A2E-AF55-601B6FDBF631} = {947C24CF-F488-4E08-8674-8B79C5E7ACF7}
 		{68B2AB90-580C-45F1-A447-552BE753C040} = {947C24CF-F488-4E08-8674-8B79C5E7ACF7}
+		{B3B3A4A3-AF8B-4CD1-85BA-5043D50A9418} = {947C24CF-F488-4E08-8674-8B79C5E7ACF7}
 	EndGlobalSection
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true

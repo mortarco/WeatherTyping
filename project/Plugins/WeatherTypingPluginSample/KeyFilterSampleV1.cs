@@ -16,13 +16,14 @@
 
 using System.Collections.Generic;
 using System;
+using com.denasu.WeatherTyping.plugin.input;
 
-namespace com.denasu.WeatherTyping.plugin.input
+namespace WeatherTypingSample
 {
     /// <summary>
     /// Key convert for simple key and shift+key
     /// </summary>
-    public class KeyFilterDefaultV1 : MarshalByRefObject, IKeyFilter
+    public class KeyFilterSampleV1 : MarshalByRefObject, IKeyFilter
     {
         /// <summary>
         /// Version
@@ -42,7 +43,7 @@ namespace com.denasu.WeatherTyping.plugin.input
         {
             get
             {
-                return "Default";
+                return "Sample";
             }
         }
 
@@ -53,7 +54,7 @@ namespace com.denasu.WeatherTyping.plugin.input
         {
             get
             {
-                return "Denasu System";
+                return "Sample";
             }
         }
 
@@ -64,7 +65,7 @@ namespace com.denasu.WeatherTyping.plugin.input
         {
             get
             {
-                return "Default key converter";
+                return "Sample key converter";
             }
         }
 
@@ -80,26 +81,10 @@ namespace com.denasu.WeatherTyping.plugin.input
             }
         }
 
-
         /// <summary>
         /// Shift
         /// </summary>
-        bool _shift = false;
-
-        /// <summary>
-        /// InputMethod Author
-        /// </summary>
-        private string _imAuthor;
-
-        /// <summary>
-        /// InputMethod Name
-        /// </summary>
-        private string _imName;
-
-        /// <summary>
-        /// InputMethod Version
-        /// </summary>
-        private int _imVersion;
+        bool _shift = true;
 
         /// <summary>
         /// Returns key map names
@@ -118,9 +103,6 @@ namespace com.denasu.WeatherTyping.plugin.input
         /// <param name="version">Version</param>
         public void InputMethodInfo(string author, string name, int version)
         {
-            _imAuthor = author;
-            _imName = name;
-            _imVersion = version;
         }
 
         /// <summary>
@@ -130,7 +112,7 @@ namespace com.denasu.WeatherTyping.plugin.input
         public IKeyCustom CreateKeyCustom()
         {
             // No customization
-            return new KeyCustomDefaultV1();
+            return new KeyCustomSampleV1();
         }
 
         /// <summary>
@@ -149,13 +131,13 @@ namespace com.denasu.WeatherTyping.plugin.input
 
             if (pressed && (physicalKey == (int)WTKeyCode.Shift))
             {
-                // Normal shift key pressed
-                _shift = true;
+                // Invert Shift key!
+                _shift = false;
             }
             else if (!pressed && (physicalKey == (int)WTKeyCode.Shift))
             {
-                // Normal shift key released
-                _shift = false;
+                // Invert Shift key!
+                _shift = true;
             }
             else if (pressed)
             {
