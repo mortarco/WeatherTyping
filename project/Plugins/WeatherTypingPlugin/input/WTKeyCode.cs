@@ -136,6 +136,8 @@ namespace com.denasu.WeatherTyping.plugin.input
         NonEng102 = 515,       // 102 Keyboard
         ABNT_C1 = 516,         // Brazilian Keyboard
         ABNT_C2 = 517,         // Brazilian Keyboard
+        Ext_101a = 518,        // 101 Extend 1
+        Ext_101b = 519,        // 101 Extend 2
 
         // Modifier bit flags
         Shift = 0x00000400,

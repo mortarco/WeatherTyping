@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -44,17 +45,49 @@ namespace com.denasu.WeatherTyping.plugin.helper
             return new string(s.ToCharArray().Select(c => (c >= 'ァ' && c <= 'ヶ') ? (char)(c + 'ぁ' - 'ァ') : c).ToArray());
         }
 
-        private static Regex _zentaku = new Regex(@"[０-９Ａ-Ｚａ-ｚ]", RegexOptions.None);
-        private static Regex _hankaku = new Regex(@"[0-9A-Za-z]", RegexOptions.None);
+        private static Dictionary<char, char> _zenkakuSign = new Dictionary<char, char>()
+        {
+            { '！', '!' }, { '”', '\"' }, { '＃', '#' }, { '＄', '$' }, { '％', '%' },
+            { '＆', '&' }, { '’', '\'' }, { '‘', '`' }, { '（', '(' }, { '）', ')' },
+            { '＊', '*' }, { '＋', '+' }, { '、', ',' }, { '，', ',' }, { '－', '-' },
+            { 'ー', '-' }, { '．', '.' }, { '。', '.' }, { '／', '/' }, { '：', ':' },
+            { '；', ';' }, { '＜', '<' }, { '＝', '=' }, { '＞', '>' }, { '？', '?' },
+            { '＠', '@' }, { '［', '[' }, { '「', '[' }, { '￥', '\\' }, { '］', ']' },
+            { '」', ']' }, { '＾', '^' }, { '＿', '_' }, { '｀', '`' }, { '｛', '{' },
+            { '｜', '|' }, { '｝', '}' }, { '～', '~' }, { '・', '/' },
+        };
+
+        private static Dictionary<char, char> _hankakuSign = new Dictionary<char, char>()
+        {
+            { '!', '！' }, { '\"', '”' }, { '#', '＃' }, { '$', '＄' }, { '%', '％' },
+            { '&', '＆' }, { '\'', '’' }, { '(', '（' }, { ')', '）' }, { '*', '＊' },
+            { '+', '＋' }, { ',', '，' }, { '-', 'ー' }, { '.', '。' }, { '/', '／' },
+            { ':', '：' }, { ';', '；' }, { '<', '＜' }, { '=', '＝' }, { '>', '＞' },
+            { '?', '？' }, { '@', '＠' }, { '[', '［' }, { '\\', '￥' }, { ']', '］' },
+            { '^', '＾' }, { '_', '＿' }, { '`', '｀' }, { '{', '｛' }, { '|', '｜' },
+            { '}', '｝' }, { '~', '～' },
+         };
+
+        private static Regex _zentakuAlnum = new Regex(@"[０-９Ａ-Ｚａ-ｚ]", RegexOptions.None);
+        private static Regex _hankakuAlnum = new Regex(@"[0-9A-Za-z]", RegexOptions.None);
+        private static Regex _alpha = new Regex(@"[A-Za-z]", RegexOptions.None);
 
         /// <summary>
         /// Zenkaku to Hankaku
         /// </summary>
         /// <param name="s">Zenkaku</param>
         /// <returns>Hankaku</returns>
-        public static string Zenkaku2Hankaku(this string s)
+        public static string Zenkaku2Hankaku(this string s, bool alnum = true, bool sign = false)
         {
-            return _zentaku.Replace(s, c => ((char)((int)(c.Value.ToCharArray())[0] - 65248)).ToString());
+            if (alnum)
+            {
+                s = _zentakuAlnum.Replace(s, c => ((char)((int)(c.Value.ToCharArray())[0] - 65248)).ToString());
+            }
+            if (sign)
+            {
+                s = string.Concat(s.ToCharArray().Select(c => _zenkakuSign.ContainsKey(c) ? _zenkakuSign[c] : c));
+            }
+            return s;
         }
 
         /// <summary>
@@ -62,9 +95,17 @@ namespace com.denasu.WeatherTyping.plugin.helper
         /// </summary>
         /// <param name="s">Hankaku</param>
         /// <returns>Zenkaku</returns>
-        public static string Hankaku2Zenkaku(this string s)
+        public static string Hankaku2Zenkaku(this string s, bool alnum = true, bool sign = false)
         {
-            return _hankaku.Replace(s, c => ((char)((int)(c.Value.ToCharArray())[0] + 65248)).ToString());
+            if (alnum)
+            {
+                s = _hankakuAlnum.Replace(s, c => ((char)((int)(c.Value.ToCharArray())[0] + 65248)).ToString());
+            }
+            if (sign)
+            {
+                s = string.Concat(s.ToCharArray().Select(c => _hankakuSign.ContainsKey(c) ? _hankakuSign[c] : c));
+            }
+            return s;
         }
 
         /// <summary>
@@ -85,6 +126,11 @@ namespace com.denasu.WeatherTyping.plugin.helper
         public static string Large2Small(this string s)
         {
             return new string(s.ToCharArray().Select(c => (c >= 'a' && c <= 'z') ? (char)(c + 'ａ' - 'a') : c).ToArray());
+        }
+
+        public static bool IsAlpha(this string s)
+        {
+            return _alpha.IsMatch(s);
         }
     }
 }

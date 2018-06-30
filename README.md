@@ -1,7 +1,7 @@
 # WeatherTyping
 
 Weather Typingは，タイピングを楽しむためのタイピングソフトである。普通にタイピングを練習する他、ネットワーク対戦やネットランキングで他のユーザと競い合ったり，自作の入力方式や自作のワードを使うといった楽しみ方ができる場を提供する。Weather Typingは以下のWebサイトからダウンロードできる。  
-<http://denasu.com/>
+<https://denasu.com/>
 
 本GitHubリポジトリは、Weather Typingのプラグインを開発するためのオープンソースプロジェクトである。Weather Typing自体はクローズドソースのフリーソフトウェアであるが、プラグイン部分はユーザが自由に開発できるようになっている。
 
@@ -23,7 +23,7 @@ Weather Typingのイメージ
 
 WeatherTypingPluginは、プラグイン開発に必要なクラスが入ったライブラリである。WeatherTypingPluginDenasuは、Qwertyなど、Denasu System公式の入力方式が入ったプラグインDLLである。WeatherTypingPluginSampleは、最低限の実装をしたサンプルのプラグインDLLである。実際の開発では、公式プラグインを改造してカスタマイズするか、サンプルを改造して新しくプラグインDLLを作ることになる。
 
-Weather Typingプラグインは、Visual Studio 2017（Communityエディションも可）で開発できる。.NETのDLLが作成できれば他のツールでも構わない。Visual Studioの場合は、「.NETデスクトップ開発」を選択すること。環境ができたら、WeatherTyping.slnファイルを開き、ビルドしてみよう。WeatherTypingPlugin.dll、WeatherTypingPluginDenasu.dll、WeatherTypingPluginSample.dllができれば成功である。
+Weather Typingプラグインは、Visual Studio 2017（Communityエディションも可）で開発できる。.NETのDLLが作成できれば他のツールでも構わない。Visual Studioの場合は、「.NETデスクトップ開発」を選択すること。環境ができたら、WeatherTyping.slnファイルを開き、ビルドしてみよう。WeatherTypingPlugin.dll、WeatherTypingPluginDenasu.dll、WeatherTypingPluginSample.dllができれば成功である。新規にプラグインを作成する場合，.NET Standard 2.0で作成すること。ここではサンプルとして用意されているプロジェクトを使う。
 
 ## サンプルプラグインを試す
 
@@ -32,6 +32,7 @@ Weather Typingプラグインは、Visual Studio 2017（Communityエディショ
 * KeyCustomSampleV1.cs
 * InputFilterSampleV1.cs
 * InputCustomSampleV1.cs
+* PluginInfo.cs
 
 ### プラグインの種類
 
@@ -271,11 +272,14 @@ IInputCustomは、文字入力のユーザカスタマイズである。この�
 
     return (int)WTKeyCode.A;
 
+### PluginInfo
+
+最後に，プラグインDLL一つごとにIPluginInfoを実装したクラスを用意する必要がある。これは現状公式のプラグインしかみていないが，将来的に他のプラグインでもランキングに参加できるようになったときに使われる予定である。実装方法は中身を見ればすぐに分かるのでここでは省略する。
 
 ## 注意事項
 
 * プラグインはサンドボックス上で動作し、ファイルI/Oやデバイスの利用などは一切できない。これはプラグインをWebで配布し、他のユーザに使ってもらうことを想定しているためである。しかし、音声入力の練習ソフトなどには必要になるので、今後緩和する可能性もある。
-* WeatherTypingPlugin.dllプロジェクトはソースの参照用である。プラグインのビルド時はGitHubのプロジェクトではなくWeatherTyping本体付属のDLLを参照すること。本体付属のDLLはDenasu Systemの署名があるがオープンソース版にはないため、WeatherTyping本体からは参照できない。
+* WeatherTypingPlugin.dllプロジェクトはソースの参照用である。プラグインのビルド時はGitHubのプロジェクトではなくWeatherTyping本体付属のDLLを参照することを推奨する。
 
 ## 終わりに
 
